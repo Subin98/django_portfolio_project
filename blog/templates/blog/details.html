@@ -1,0 +1,14 @@
+{% extends 'portfolio/base.html'%}
+
+{% block content%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/mystyle.css' %}">
+<h1 align="center">{{ blo.title }}</h1>
+<br>
+<div class="cover">
+<img src="{{ blo.image.url }}" class="img-fluid" alt="Responsive image">
+</div>
+<div class="para">
+<p>{{ blo.description }}</p>
+</div>
+{% endblock %}

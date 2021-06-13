@@ -1,0 +1,46 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/mystyle.css' %}">
+<div class="cover">
+<img src="{% static 'portfolio/cover.jpg' %}"  class="img-fluid">
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<section>
+<div class="container">
+    <div class="text-center mb-5">
+
+    </div>
+
+    <div class="row">
+      {% for port in portfolios %}
+         <div class="col-sm-4">
+            <article class="card card-style2">
+                <div class="card-img">
+                    <img class="img-thumbnail" src="{{ port.image.url }}" alt="...">
+                    <div class="date"><span>15</span>Sep</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="h5"><a href="#!">{{ port.title }}</a></h3>
+                    <p class="display-30">{{ port.description|slice:100 }}</p>
+                    <a href="#!" class="read-more"></a>
+                </div>
+
+            </article>
+        </div>
+
+  {% endfor %}
+    </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+{% endblock %}
